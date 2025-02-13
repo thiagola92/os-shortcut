@@ -1,5 +1,5 @@
-extends Node2D
+extends Control
 
 
-func _ready() -> void:
-	OSListener.get_singleton().start_listen()
+func _on_button_pressed() -> void:
+	print("BUTTON PRESSED")

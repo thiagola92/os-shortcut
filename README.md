@@ -1,5 +1,5 @@
 # OSShortcut
-Simulates shortcuts by listen keystrokes from operating system.  
+Replicate Operating System key presses and release into Godot.
 
 - ❌ MacOS
 - Linux
@@ -7,64 +7,26 @@ Simulates shortcuts by listen keystrokes from operating system.
 	- ❌ Wayland
 - ✔️ Windows
 
-# Logic
-When a key is pressed, we append the pressed key to an array.  
-```gdscript
-["A"]
-```
+# Installation
+- Download latest release
+- Extract `addons` directory from ZIP
+- Move `addons` directory to your project directory
+  - If your project already have an `addons` directory, copy `addons/os_shortcut` to your project `addons`
+- Open Godot project
+- Go to `Project > Project Settings... > Plugins`
+  - You should be seeing OSShortcut plugin there, otherwise something was done wrong
+- Check `Enable` in OSShortcut plugin
+- Restart Godot
 
-When a key is released, we remove the pressed key from array.  
-```gdscript
-[]
-```
-
-Shortcuts are checked when a key is pressed.  
-```gdscript
-# Assume that we have `Ctrl+A` as shortcut.
-
-[]
-["Ctrl"] # Check `Ctrl+A`
-["Ctrl", "A"] # Trigger `Ctrl+A`
-["Ctrl"]
-[]
-```
-
-
-Shortcuts are a combination of keys, where the order don't matter.  
-```gdscript
-# Assume that we have `Ctrl+A` as shortcut.
-
-[]
-["Ctrl"] # Check `Ctrl+A`
-["Ctrl", "A"] # Trigger `Ctrl+A`
-["Ctrl"]
-[]
-["A"] # Check `Ctrl+A`
-["A", "Ctrl"] # Trigger `Ctrl+A`
-```
-
-The shortcut will trigger even when keys are pressed between the shortcut keys.  
-```gdscript
-# Assume that we have `Ctrl+A` as shortcut.
-
-[]
-["Ctrl"]
-["Ctrl", "B"]
-["Ctrl", "B", "Left"]
-["Ctrl", "B", "Left", "A"] # Trigger `Ctrl+A`
-```
-
-Only the last key pressed can trigger shortcuts.  
-```gdscript
-# Assume that we have `Ctrl+A` and `Ctrl+T` as shortcuts.
-
-[]
-["Ctrl"]
-["Ctrl", "T"] # Trigger `Ctrl+T`
-["Ctrl", "T", "A"] # Trigger `Ctrl+A`
-["Ctrl", "T"]
-["Ctrl"]
-```
+# Usage
+- Go to `Project > Project Settings... > Globals`
+- Check `Enable` in OSShortcut Global
+- Add a `Button` to your scene
+- Add a `Shortcut` to your button
+- Start scene
+- Focus a window that is not from Godot
+- Press the shortcut keys
+- Check if the button was pressed
 
 # Why
 (11-fev-2025) Godot doesn't include any way to listen for key inputs when your window is not focus ([#7713](https://github.com/godotengine/godot-proposals/issues/7713)).  
