@@ -12,13 +12,6 @@ func _exit_tree() -> void:
 	OSListener.get_singleton().stop_listen()
 
 
-# TESTING
-#func _input(event: InputEvent) -> void:
-	#if event is InputEventKey:
-		#if not event.echo:
-			#print(event)
-
-
 func _process(_delta: float) -> void:
 	# Get event from queue.
 	var event: OSEvent = OSListener.get_singleton().get_event()

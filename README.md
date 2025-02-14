@@ -1,11 +1,12 @@
 # OSShortcut
 Replicate Operating System key presses and release into Godot.
 
-- ❌ MacOS
+Currently working on:  
 - Linux
 	- ✔️ X11
 	- ❌ Wayland
 - ✔️ Windows
+- ❌ MacOS
 
 # Installation
 - Download latest release
@@ -33,3 +34,6 @@ Replicate Operating System key presses and release into Godot.
 Which makes sense, games don't have reason to listen for keystrokes, but I do like to use Godot for making GUI tools.  
 
 Right now, I am making a PNGTuber and it's very important being able to switch between states in this type of tool.  
+
+# References
+- [OSListener](https://github.com/thiagola92/os-listener), GDExtension to listen key presses/releases
