@@ -19,12 +19,20 @@ func _process(_delta: float) -> void:
 	if not event:
 		return
 	
-	# INFO
-	# On Windows, Godot consume events while has focus.
-	# On Linux, Godot don't consume so we receive the same event here.
-	
-	# Avoid double input events in Linux.
+	# INFO:
+	# On Windows, Godot CONSUME events while window has focus, which means
+	# that we NEVER receive events while window has focus.
+	# On Linux, Godot LISTEN for events while window has focus, which means
+	# that we ALSO receive events while window has focus.
+	#
+	# So to avoid receiving two times the same input on Linux,
+	# we ignore when the window has focus.
+	#
+	# NOTE: If the user press a key while focusing another window and
+	# release in godot window, we still needs to remove the key.
 	if get_window().has_focus():
+		if event.type == event.KEY_RELEASE:
+			keys_down.erase(event.code)
 		return
 	
 	match event.type:
@@ -49,9 +57,9 @@ func _on_key_press(keycode: int) -> void:
 
 
 func _on_key_release(keycode: int) -> void:
-	# First remove the key, so it doesn't metion it own modifier.
+	# First remove the key, so it doesn't mention it own modifier.
 	# For example, pressing and releasing Ctrl shouldn't
-	# set ctrl_pressed unless another Ctrl is pressed.
+	# set "ctrl_pressed" unless another Ctrl is pressed.
 	keys_down.erase(keycode)
 	
 	var event_key = InputEventKey.new()
