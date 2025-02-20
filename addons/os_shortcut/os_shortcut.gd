@@ -51,7 +51,10 @@ func _on_key_press(keycode: int) -> void:
 	event_key.meta_pressed = KEY_META in keys_down
 	event_key.shift_pressed = KEY_SHIFT in keys_down
 	
-	keys_down.append(keycode)
+	if keycode not in keys_down:
+		keys_down.append(keycode)
+	else:
+		event_key.echo = true
 	
 	Input.parse_input_event(event_key)
 
