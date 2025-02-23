@@ -1,26 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://vqgtddh4c1sm"]
+[gd_scene load_steps=2 format=3 uid="uid://vqgtddh4c1sm"]
 
 [ext_resource type="Script" uid="uid://2a1n1vjtt0v5" path="res://test/main.gd" id="1_yfdjg"]
-
-[sub_resource type="InputEventKey" id="InputEventKey_yfdjg"]
-device = -1
-shift_pressed = true
-ctrl_pressed = true
-keycode = 65
-unicode = 65
-
-[sub_resource type="Shortcut" id="Shortcut_ik7bt"]
-events = [SubResource("InputEventKey_yfdjg")]
 
 [node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_yfdjg")
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-shortcut = SubResource("Shortcut_ik7bt")
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
