@@ -40,6 +40,7 @@ func _process_event_key(event: InputEventKey) -> void:
 	event.ctrl_pressed = Input.is_key_pressed(KEY_CTRL) and event.keycode != KEY_CTRL
 	event.meta_pressed = Input.is_key_pressed(KEY_META) and event.keycode != KEY_META
 	event.shift_pressed = Input.is_key_pressed(KEY_SHIFT) and event.keycode != KEY_SHIFT
+	event.echo = Input.is_key_pressed(event.keycode) and event.pressed
 	
 	Input.parse_input_event(event)
 	Input.flush_buffered_events()
