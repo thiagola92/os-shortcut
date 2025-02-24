@@ -1,12 +1,36 @@
 extends Node
 
 
+## [Control] to be focused when the application lose focus. This is highly
+## recommended because user input in another applications
+## could accidentally trigger the last focus [Control].
+## [br][br]
+## [b]For example[/b]: A user click a [Button] in Godot window and them decide to start
+## writing some text into another application. If they press [constant KEY_ENTER],
+## the [Button] (last focus [Control]) would be pressed.
+var target_focus: Control:
+	set(t):
+		if target_focus:
+			target_focus.tree_exiting.disconnect(_remove_target_focus)
+			
+		target_focus = t
+		
+		if target_focus:
+			target_focus.focus_mode = Control.FOCUS_ALL
+			target_focus.tree_exiting.connect(_remove_target_focus)
+
+
 func _ready() -> void:
 	OSListener.get_singleton().start_listen()
 
 
 func _exit_tree() -> void:
 	OSListener.get_singleton().stop_listen()
+
+
+func _notification(what: int) -> void:
+	if target_focus and what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+		target_focus.grab_focus()
 
 
 func _process(_delta: float) -> void:
@@ -44,3 +68,7 @@ func _process_event_key(event: InputEventKey) -> void:
 	
 	Input.parse_input_event(event)
 	Input.flush_buffered_events()
+
+
+func _remove_target_focus() -> void:
+	target_focus = null

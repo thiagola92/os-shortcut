@@ -22,12 +22,15 @@ Currently working on:
 # Usage
 - Go to `Project > Project Settings... > Globals`
 - Check `Enable` in OSShortcut Global
-- Add a `Button` to your scene
-- Add a `Shortcut` to your button
-- Start scene
-- Focus a window that is not from Godot
-- Press the shortcut keys
-- Check if the button was pressed
+- Now Godot will receive key press/release when your window is not focused
+
+Some Controls process inputs like key presses/releases, in this cases the user could accidentally trigger them when typing in another window. For example:  
+- User click a `Button` in Godot window
+- User click on another window
+- User press ENTER while typing in another window
+- `Button` will be pressed
+
+To avoid this accident, it's highly recommended to set `OSShortcut.target_focus` to a `Control` which you want it to receive the inputs when the window lose focus.  
 
 # Why
 (11-fev-2025) Godot doesn't include any way to listen for key inputs when your window is not focus ([#7713](https://github.com/godotengine/godot-proposals/issues/7713)).  
