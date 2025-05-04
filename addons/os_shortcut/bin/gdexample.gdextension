@@ -6,31 +6,31 @@ reloadable = true
 
 [libraries]
 
-macos.debug = "res://addons/os_shortcut/bin/liboslistener.macos.template_debug.framework"
-macos.release = "res://addons/os_shortcut/bin/liboslistener.macos.template_release.framework"
-ios.debug = "res://addons/os_shortcut/bin/liboslistener.ios.template_debug.xcframework"
-ios.release = "res://addons/os_shortcut/bin/liboslistener.ios.template_release.xcframework"
-windows.debug.x86_32 = "res://addons/os_shortcut/bin/liboslistener.windows.template_debug.x86_32.dll"
-windows.release.x86_32 = "res://addons/os_shortcut/bin/liboslistener.windows.template_release.x86_32.dll"
-windows.debug.x86_64 = "res://addons/os_shortcut/bin/liboslistener.windows.template_debug.x86_64.dll"
-windows.release.x86_64 = "res://addons/os_shortcut/bin/liboslistener.windows.template_release.x86_64.dll"
-linux.debug.x86_64 = "res://addons/os_shortcut/bin/liboslistener.linux.template_debug.x86_64.so"
-linux.release.x86_64 = "res://addons/os_shortcut/bin/liboslistener.linux.template_release.x86_64.so"
-linux.debug.arm64 = "res://addons/os_shortcut/bin/liboslistener.linux.template_debug.arm64.so"
-linux.release.arm64 = "res://addons/os_shortcut/bin/liboslistener.linux.template_release.arm64.so"
-linux.debug.rv64 = "res://addons/os_shortcut/bin/liboslistener.linux.template_debug.rv64.so"
-linux.release.rv64 = "res://addons/os_shortcut/bin/liboslistener.linux.template_release.rv64.so"
-android.debug.x86_64 = "res://addons/os_shortcut/bin/liboslistener.android.template_debug.x86_64.so"
-android.release.x86_64 = "res://addons/os_shortcut/bin/liboslistener.android.template_release.x86_64.so"
-android.debug.arm64 = "res://addons/os_shortcut/bin/liboslistener.android.template_debug.arm64.so"
-android.release.arm64 = "res://addons/os_shortcut/bin/liboslistener.android.template_release.arm64.so"
-web.debug.wasm32 = "res://addons/os_shortcut/bin/liboslistener.web.template_debug.wasm32.nothreads.wasm"
-web.release.wasm32 = "res://addons/os_shortcut/bin/liboslistener.web.template_release.wasm32.nothreads.wasm"
+macos.debug = "res://addons/os_shortcut/bin/macos/liboslistener.macos.template_debug.framework"
+macos.release = "res://addons/os_shortcut/bin/macos/liboslistener.macos.template_release.framework"
+ios.debug = "res://addons/os_shortcut/bin/ios/liboslistener.ios.template_debug.xcframework"
+ios.release = "res://addons/os_shortcut/bin/ios/liboslistener.ios.template_release.xcframework"
+windows.debug.x86_32 = "res://addons/os_shortcut/bin/windows/liboslistener.windows.template_debug.x86_32.dll"
+windows.release.x86_32 = "res://addons/os_shortcut/bin/windows/liboslistener.windows.template_release.x86_32.dll"
+windows.debug.x86_64 = "res://addons/os_shortcut/bin/windows/liboslistener.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "res://addons/os_shortcut/bin/windows/liboslistener.windows.template_release.x86_64.dll"
+linux.debug.x86_64 = "res://addons/os_shortcut/bin/linux/liboslistener.linux.template_debug.x86_64.so"
+linux.release.x86_64 = "res://addons/os_shortcut/bin/linux/liboslistener.linux.template_release.x86_64.so"
+linux.debug.arm64 = "res://addons/os_shortcut/bin/linux/liboslistener.linux.template_debug.arm64.so"
+linux.release.arm64 = "res://addons/os_shortcut/bin/linux/liboslistener.linux.template_release.arm64.so"
+linux.debug.rv64 = "res://addons/os_shortcut/bin/linux/liboslistener.linux.template_debug.rv64.so"
+linux.release.rv64 = "res://addons/os_shortcut/bin/linux/liboslistener.linux.template_release.rv64.so"
+android.debug.x86_64 = "res://addons/os_shortcut/bin/android/liboslistener.android.template_debug.x86_64.so"
+android.release.x86_64 = "res://addons/os_shortcut/bin/android/liboslistener.android.template_release.x86_64.so"
+android.debug.arm64 = "res://addons/os_shortcut/bin/android/liboslistener.android.template_debug.arm64.so"
+android.release.arm64 = "res://addons/os_shortcut/bin/android/liboslistener.android.template_release.arm64.so"
+web.debug.wasm32 = "res://addons/os_shortcut/bin/web/liboslistener.web.template_debug.wasm32.nothreads.wasm"
+web.release.wasm32 = "res://addons/os_shortcut/bin/web/liboslistener.web.template_release.wasm32.nothreads.wasm"
 
 [dependencies]
 ios.debug = {
-    "res://addons/os_shortcut/bin/libgodot-cpp.ios.template_debug.xcframework": ""
+    "res://addons/os_shortcut/bin/ios/libgodot-cpp.ios.template_debug.xcframework": ""
 }
 ios.release = {
-    "res://addons/os_shortcut/bin/libgodot-cpp.ios.template_release.xcframework": ""
+    "res://addons/os_shortcut/bin/ios/libgodot-cpp.ios.template_release.xcframework": ""
 }
