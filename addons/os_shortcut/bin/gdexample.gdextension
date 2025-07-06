@@ -28,26 +28,6 @@ web.debug.wasm32 = "res://addons/os_shortcut/bin/web/liboslistener.web.template_
 web.release.wasm32 = "res://addons/os_shortcut/bin/web/liboslistener.web.template_release.wasm32.nothreads.wasm"
 
 [dependencies]
-linux.debug.x86_64 = {
-    "res://addons/os_shortcut/bin/linux/libwayland-client.so": "",
-    "res://addons/os_shortcut/bin/linux/libX11.so": "",
-    "res://addons/os_shortcut/bin/linux/libxcb.so": "",
-    "res://addons/os_shortcut/bin/linux/libxcb-keysyms.so": "",
-    "res://addons/os_shortcut/bin/linux/libxcb-keysyms.so.1": "",
-    "res://addons/os_shortcut/bin/linux/libxcb-randr.so": "",
-    "res://addons/os_shortcut/bin/linux/libxcb-xinput.so": "",
-    "res://addons/os_shortcut/bin/linux/libxcb-xinput.so.0": "",
-}
-linux.release.x86_64 = {
-    "res://addons/os_shortcut/bin/linux/libwayland-client.so": "",
-    "res://addons/os_shortcut/bin/linux/libX11.so": "",
-    "res://addons/os_shortcut/bin/linux/libxcb.so": "",
-    "res://addons/os_shortcut/bin/linux/libxcb-keysyms.so": "",
-    "res://addons/os_shortcut/bin/linux/libxcb-keysyms.so.1": "",
-    "res://addons/os_shortcut/bin/linux/libxcb-randr.so": "",
-    "res://addons/os_shortcut/bin/linux/libxcb-xinput.so": "",
-    "res://addons/os_shortcut/bin/linux/libxcb-xinput.so.0": "",
-}
 ios.debug = {
     "res://addons/os_shortcut/bin/ios/libgodot-cpp.ios.template_debug.xcframework": ""
 }
