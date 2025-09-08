@@ -5,6 +5,7 @@ Currently working on:
 - Linux
 	- ✔️ X11
 	- ❌ Wayland
+		- ✔️ Applications running with XWayland
 - ✔️ Windows
 - ❌ MacOS
 
